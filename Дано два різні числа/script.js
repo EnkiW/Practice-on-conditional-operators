@@ -1,23 +1,10 @@
-let value = prompt("Введіть п'ятизначне число:");
-let number = parseInt(value);
+const number1 = parseFloat(prompt("Введіть перше число:"));
+const number2 = parseFloat(prompt("Введіть друге число:"));
 
-if (isNaN(number) || number < 10000 || number > 99999) {
-    alert("Некоректне введення!");
-} else {
-    let numOne = number % 10;
-    number = Math.floor(number / 10);
-
-    let numTwo = number % 10;
-    number = Math.floor(number / 10);
-
-    let numThee = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFour = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFive = number % 10;
-
-    let result = numFive + " " + numFour + " " + numThee + " " + numTwo + " " + numOne;
-    alert(result);
+if (number1 > number2) {
+    alert(number1 + " більше за " + number2);
+} else if (number1 < number2) {
+    alert(number1 + " більше за " + number2)
+} else{
+    alert("Обидва числа рівні")
 }
