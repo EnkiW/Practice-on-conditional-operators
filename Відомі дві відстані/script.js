@@ -1,23 +1,12 @@
-let value = prompt("Введіть п'ятизначне число:");
-let number = parseInt(value);
+const kilometer = parseFloat(prompt("Відстань у кілометрах:"));
+const fytu = parseFloat(prompt("Відстань у футах:"));
 
-if (isNaN(number) || number < 10000 || number > 99999) {
-    alert("Некоректне введення!");
+const meter = fytu * 0.305;
+
+if (kilometer < meter) {
+    console.log("Відстань у кілометрах менша.");
+} else if (kilometer > meter) {
+    console.log("Відстань у футах менша.");
 } else {
-    let numOne = number % 10;
-    number = Math.floor(number / 10);
-
-    let numTwo = number % 10;
-    number = Math.floor(number / 10);
-
-    let numThee = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFour = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFive = number % 10;
-
-    let result = numFive + " " + numFour + " " + numThee + " " + numTwo + " " + numOne;
-    alert(result);
+    console.log("Відстані рівні.");
 }
