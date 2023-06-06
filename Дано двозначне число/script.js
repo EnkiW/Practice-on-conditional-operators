@@ -1,23 +1,11 @@
-let value = prompt("Введіть п'ятизначне число:");
-let number = parseInt(value);
+const number = prompt("Введіть двозначне число:");
+const first = parseInt(number.charAt(0));
+const second = parseInt(number.charAt(1));
 
-if (isNaN(number) || number < 10000 || number > 99999) {
-    alert("Некоректне введення!");
+if (first > second) {
+    console.log("Перша цифра (" + first + ") більша за другу цифру (" + second + ").");
+} else if (second > first) {
+    console.log("Друга цифра (" + second + ") більша за першу цифру (" + first + ").");
 } else {
-    let numOne = number % 10;
-    number = Math.floor(number / 10);
-
-    let numTwo = number % 10;
-    number = Math.floor(number / 10);
-
-    let numThee = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFour = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFive = number % 10;
-
-    let result = numFive + " " + numFour + " " + numThee + " " + numTwo + " " + numOne;
-    alert(result);
+    console.log("Обидві цифри рівні.");
 }
