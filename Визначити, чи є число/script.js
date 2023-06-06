@@ -1,23 +1,14 @@
-let value = prompt("Введіть п'ятизначне число:");
-let number = parseInt(value);
+let a = parseInt(prompt("Введіть перше число:"));
+let b = parseInt(prompt("Введіть друге число:"));
 
-if (isNaN(number) || number < 10000 || number > 99999) {
-    alert("Некоректне введення!");
+if (b % a === 0) {
+    console.log(a + " є дільником " + b);
 } else {
-    let numOne = number % 10;
-    number = Math.floor(number / 10);
+    console.log(a + " не є дільником " + b);
+}
 
-    let numTwo = number % 10;
-    number = Math.floor(number / 10);
-
-    let numThee = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFour = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFive = number % 10;
-
-    let result = numFive + " " + numFour + " " + numThee + " " + numTwo + " " + numOne;
-    alert(result);
+if (a % b === 0) {
+    console.log(b + " є дільником " + a);
+} else {
+    console.log(b + " не є дільником " + a);
 }
