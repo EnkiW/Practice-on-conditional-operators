@@ -1,23 +1,16 @@
-let value = prompt("Введіть п'ятизначне число:");
-let number = parseInt(value);
+const number = parseInt(prompt("Введіть трьохзначсне число:"));
+const number1 = Math.floor(number / 100);
+const number2 = Math.floor((number % 100) / 10);
+const number3 = number % 10;
 
-if (isNaN(number) || number < 10000 || number > 99999) {
-    alert("Некоректне введення!");
+if (number1 === number2 && number2 === number3) {
+    console.log("Усі цифри числа однакові.");
 } else {
-    let numOne = number % 10;
-    number = Math.floor(number / 10);
+    console.log("Не всі цифри числа однакові.");
+}
 
-    let numTwo = number % 10;
-    number = Math.floor(number / 10);
-
-    let numThee = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFour = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFive = number % 10;
-
-    let result = numFive + " " + numFour + " " + numThee + " " + numTwo + " " + numOne;
-    alert(result);
+if (number1 === number2 || number1 === number3 || number2 === number3) {
+    console.log("Серед цифр є цифри, які співпадають.");
+} else {
+    console.log("Серед цифр немає цифр, які співпадають.");
 }
