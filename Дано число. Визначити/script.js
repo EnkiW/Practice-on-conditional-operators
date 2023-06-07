@@ -1,23 +1,10 @@
-let value = prompt("Введіть п'ятизначне число:");
-let number = parseInt(value);
+const number = parseInt(prompt("Введіть число:"));
+const lastnumber = number % 10;
 
-if (isNaN(number) || number < 10000 || number > 99999) {
-    alert("Некоректне введення!");
+if (lastnumber % 2 === 0) {
+    console.log("Остання цифра є парною.");
 } else {
-    let numOne = number % 10;
-    number = Math.floor(number / 10);
-
-    let numTwo = number % 10;
-    number = Math.floor(number / 10);
-
-    let numThee = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFour = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFive = number % 10;
-
-    let result = numFive + " " + numFour + " " + numThee + " " + numTwo + " " + numOne;
-    alert(result);
+    console.log("Остання цифра є непарною.");
 }
+
+console.log("Остання цифра: " + lastnumber);
