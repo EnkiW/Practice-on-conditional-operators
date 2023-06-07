@@ -1,23 +1,25 @@
-let value = prompt("Введіть п'ятизначне число:");
-let number = parseInt(value);
+const number = parseInt(prompt("Введіть тризначне число:"));
+const number1 = Math.floor(number / 100);
+const number2 = Math.floor((number % 100) / 10);
+const number3 = number % 10;
 
-if (isNaN(number) || number < 10000 || number > 99999) {
-    alert("Некоректне введення!");
+const sum = number1 + number2 + number3;
+const product = number1 * number2 * number3;
+
+if (sum % 2 === 0) {
+    console.log("Сума цифр є парною.");
 } else {
-    let numOne = number % 10;
-    number = Math.floor(number / 10);
+    console.log("Сума цифр не є парною.");
+}
 
-    let numTwo = number % 10;
-    number = Math.floor(number / 10);
+if (sum % 5 === 0) {
+    console.log("Сума цифр кратна числу 5.");
+} else {
+    console.log("Сума цифр не кратна числу 5.");
+}
 
-    let numThee = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFour = number % 10;
-    number = Math.floor(number / 10);
-
-    let numFive = number % 10;
-
-    let result = numFive + " " + numFour + " " + numThee + " " + numTwo + " " + numOne;
-    alert(result);
+if (product > 100) {
+    console.log("Добуток цифр більший за 100.");
+} else {
+    console.log("Добуток цифр не більший за 100.");
 }
